@@ -1,30 +1,30 @@
 export default function EnhancedLanding() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b">
       {/* Navigation */}
       <nav className="sticky top-0 backdrop-blur-md bg-white/80 px-6 py-4 border-b border-purple-100 z-10">
         <div className="container mx-auto flex items-center justify-between">
           <a
             href="#"
-            className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent"
+            className="
+            text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent
+            
+            "
           >
             Lebasi
           </a>
           <div className="hidden md:flex items-center gap-8">
             {[
-              "¿Qué es Lebasi?",
-              "Comprar Lebasi",
-              "Ser Distribuidor",
+              "Comprar Lebasi", 
               "Contáctanos",
-              "Visitar Tienda",
             ].map((item) => (
               <a
                 key={item}
                 href="#"
-                className="text-gray-600 hover:text-purple-600 transition-colors relative group"
+                className="text-gray-600 hover:text-blue-400 transition-colors relative group"
               >
                 {item}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               </a>
             ))}
           </div>
@@ -55,13 +55,18 @@ export default function EnhancedLanding() {
           }}
            className="relative rounded rounded-xl overflow-hidden border-b-2 border-gray-200 ">
           
-              <video name="media" controls width="100%" height="100%">
+              <video name="media" controls
+              width="100%"
+              height="100%"
+              controlsList="nodownload"
+              poster="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiScreenshot.png?alt=media&token=b9d91ae4-a563-4175-883f-a8f97db6de19"
+           >
                 <source
-                  src="https://firebasestorage.googleapis.com/v0/b/prueba-62d11.appspot.com/o/lebasi-raganarok%2Flebasi.mp4?alt=media&amp;token=a395f511-8b17-45c8-8eff-59774198db9c"
+                  src="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiVideo.mp4?alt=media&token=758864a0-b7a8-4252-9d56-848f98c3ac1d"
                   type="video/mp4"
                 />
                 Tu navegador no soporta videos. Descárgalo
-                <a href="https://firebasestorage.googleapis.com/v0/b/prueba-62d11.appspot.com/o/lebasi-raganarok%2Flebasi.mp4?alt=media&amp;token=a395f511-8b17-45c8-8eff-59774198db9c">
+                <a href="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiVideo.mp4?alt=media&token=758864a0-b7a8-4252-9d56-848f98c3ac1d">
                   aquí
                 </a>
                 .
@@ -71,26 +76,25 @@ export default function EnhancedLanding() {
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
-                <span className="px-4 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">
+                <span className="px-4 py-1 bg-purple-100 text-blue-600 rounded-full text-sm">
                   Nuevo
                 </span>
-                <a href="#" className="text-sm text-purple-600 hover:underline">
-                  Política de Privacidad
-                </a>
+              
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                 Descubre Lebasi:
-                <span className="block text-purple-600">Lactoserum Suizo</span>
+                <span className="block text-blue-400">Lactoserum Suizo</span>
               </h1>
               <p className="text-gray-600 text-lg">
                 Lebasi es un alimento natural elaborado a base de lactosuero, rico en proteínas, vitaminas, minerales y aminoácidos esenciales. Este alimento es ideal para mejorar la salud de manera integral, ya que limpia, nutre y regenera el organismo desde dentro.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl">
+              <button className="px-8 py-3 bg-blue-300 text-white rounded-xl hover:bg-blue-400 transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl">
                 Comprar Online
               </button>
-              <button className="px-8 py-3 bg-white text-purple-600 border-2 border-purple-600 rounded-xl hover:bg-purple-50 transform hover:-translate-y-1 transition-all">
+              <button className="px-8 py-3 bg-white text-blue-400 border-2 
+              border-blue-400 rounded-xl hover:bg-blue-50 transform hover:-translate-y-1 transition-all">
                 Saber Más
               </button>
             </div>

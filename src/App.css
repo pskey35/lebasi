@@ -1,3 +1,21 @@
+:root {
+  --color1: #049DD9;
+  --color1-light: #6EC4EB;
+  
+  --color2: #0378A6;
+  --color2-light: #5BA8CC;
+  
+  --color3: #03658C;
+  --color3-light: #4F9ABB;
+  
+  --color4: #F2EAC2;
+  --color4-light: #F7F4E0;
+  
+  --color5: #F2F2F2;
+  --color5-light: #FFFFFF;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -12,7 +30,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--color3-light));
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
