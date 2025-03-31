@@ -1,85 +1,96 @@
-export default function EnhancedLanding() {
+import { WhatsappButton, ToBuyButton, MoreAboutUsButton, BuyNowButton, DistributorButton } from "./components/Buttons";
+import { Icon_1, Icon_2, Icon_3 } from "./assets/iconsLebasiAbout.jsx"
+
+function NavBar() {
   return (
-    <div className="min-h-screen bg-gradient-to-b">
+    <nav className="sticky top-0 backdrop-blur-md bg-white/80 px-6 py-4 border-b border-blue-100 z-10" >
       {/* Navigation */}
-      <nav className="sticky top-0 backdrop-blur-md bg-white/80 px-6 py-4 border-b border-purple-100 z-10">
-        <div className="container mx-auto flex items-center justify-between">
-          <a
-            href="#"
-            className="
+      <div className="container mx-auto flex items-center justify-between">
+        <a
+          href="#"
+          className="
             text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-700 bg-clip-text text-transparent
             
             "
-          >
-            Lebasi
-          </a>
-          <div className="hidden md:flex items-center gap-8">
-            {[
-              "Comprar Lebasi", 
-              "Contáctanos",
-            ].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-gray-600 hover:text-blue-400 transition-colors relative group"
-              >
-                {item}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </a>
-            ))}
-          </div>
-          <button className="md:hidden">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        >
+          Lebasi
+        </a>
+        <div className="hidden md:flex items-center gap-8">
+          {[
+            "Comprar Lebasi",
+            "Contáctanos",
+          ].map((item) => (
+            <a
+              key={item}
+              href="#"
+              className="text-gray-600 hover:text-blue-400 transition-colors relative group"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              {item}
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </a>
+          ))}
         </div>
-      </nav>
+        <button className="md:hidden">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav >
+  )
+}
+
+
+
+export default function EnhancedLanding() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b">
+      <NavBar></NavBar>
 
       {/* Hero Section */}
       <div className="container mx-auto px-6 py-12 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div
-          style={{
-            borderRadius: "34px",
-          }}
-           className="relative rounded rounded-xl overflow-hidden border-b-2 border-gray-200 ">
-          
-              <video name="media" controls
+            style={{
+              borderRadius: "34px",
+            }}
+            className="relative rounded rounded-xl overflow-hidden border-b-2 border-gray-200 ">
+
+            <video name="media" controls
               width="100%"
               height="100%"
               controlsList="nodownload"
               poster="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiScreenshot.png?alt=media&token=b9d91ae4-a563-4175-883f-a8f97db6de19"
-           >
-                <source
-                  src="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiVideo.mp4?alt=media&token=758864a0-b7a8-4252-9d56-848f98c3ac1d"
-                  type="video/mp4"
-                />
-                Tu navegador no soporta videos. Descárgalo
-                <a href="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiVideo.mp4?alt=media&token=758864a0-b7a8-4252-9d56-848f98c3ac1d">
-                  aquí
-                </a>
-                .
-              </video>
-         
+            >
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiVideo.mp4?alt=media&token=758864a0-b7a8-4252-9d56-848f98c3ac1d"
+                type="video/mp4"
+              />
+              Tu navegador no soporta videos. Descárgalo
+              <a href="https://firebasestorage.googleapis.com/v0/b/node-4030d.appspot.com/o/lebasiVideo.mp4?alt=media&token=758864a0-b7a8-4252-9d56-848f98c3ac1d">
+                aquí
+              </a>
+              .
+            </video>
+
           </div>
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4 mb-4">
-                <span className="px-4 py-1 bg-purple-100 text-blue-600 rounded-full text-sm">
+                <span className="px-4 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
                   Nuevo
                 </span>
-              
+
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                 Descubre Lebasi:
@@ -90,13 +101,9 @@ export default function EnhancedLanding() {
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              <button className="px-8 py-3 bg-blue-300 text-white rounded-xl hover:bg-blue-400 transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl">
-                Comprar Online
-              </button>
-              <button className="px-8 py-3 bg-white text-blue-400 border-2 
-              border-blue-400 rounded-xl hover:bg-blue-50 transform hover:-translate-y-1 transition-all">
-                Saber Más
-              </button>
+
+              <ToBuyButton></ToBuyButton>
+              <MoreAboutUsButton></MoreAboutUsButton>
             </div>
           </div>
         </div>
@@ -115,21 +122,12 @@ export default function EnhancedLanding() {
 
         <div className="grid md:grid-cols-3 gap-8">
           <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-200 rounded-xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform">
+
+              <Icon_1></Icon_1>
             </div>
+
+
             <h3 className="text-xl font-semibold mb-3">100% Natural</h3>
             <p className="text-gray-600">
               Sin productos farmacéuticos ni aditivos artificiales. Pura nutrición natural.
@@ -137,20 +135,8 @@ export default function EnhancedLanding() {
           </div>
 
           <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-200 rounded-xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform">
+              <Icon_2></Icon_2>
             </div>
             <h3 className="text-xl font-semibold mb-3">
               41 Nutrientes Esenciales
@@ -161,27 +147,17 @@ export default function EnhancedLanding() {
           </div>
 
           <div className="group p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-200 rounded-xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform">
+              <Icon_3></Icon_3>
             </div>
             <h3 className="text-xl font-semibold mb-3">
               Oportunidad de Negocio
             </h3>
-            <p className="text-gray-600">
-              Únete como distribuidor y construye tu propio negocio exitoso.
+            <p>
+              Convierte tu pasión por la salud en una fuente de ingresos. Únete a nuestra comunidad y crece con nosotros.
+
             </p>
+
           </div>
         </div>
       </section>
@@ -196,34 +172,18 @@ export default function EnhancedLanding() {
             Haz clic en el botón que corresponde ahora y sé parte de los nuevos éxitos.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <button className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl hover:opacity-90 transform hover:-translate-y-1 transition-all shadow-lg hover:shadow-xl">
-              Comprar Ahora
-            </button>
-            <button className="px-10 py-4 bg-white text-purple-600 border-2 border-purple-600 rounded-xl hover:bg-purple-50 transform hover:-translate-y-1 transition-all">
-              Únete como Distribuidor
-            </button>
+            <BuyNowButton></BuyNowButton>
+            <DistributorButton></DistributorButton>
+
           </div>
         </div>
       </section>
 
-      {/* Social Links */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-6">
-        {[
-          { name: "Facebook", color: "blue" },
-          { name: "Instagram", color: "pink" },
-          { name: "WhatsApp", color: "green" },
-        ].map((social) => (
-          <a
-            key={social.name}
-            href="#"
-            className={`w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-xl`}
-          >
-            <span className={`text-${social.color}-600 font-medium`}>
-              {social.name.slice(0, 2).toLowerCase()}
-            </span>
-          </a>
-        ))}
-      </div>
+
+      <WhatsappButton></WhatsappButton>
     </div>
   );
 }
+
+
+
